@@ -1,15 +1,13 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Trying to figure out how to reset the password when user hits the generate button thing
-var resetBtn = document.createElement("button")
-var divButton = document.createElement("div")
-divButton.append(resetBtn)
-resetBtn.textContent = "Reset Password Generator"
-resetBtn.style.fontSize = "20px"
-var footer = document.querySelector(".card-footer")
-footer.append(divButton)
+// Reset the password
+function reset() {
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password
+  password = ""
 
+}
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -17,20 +15,11 @@ function writePassword() {
 
   passwordText.value = password;
   chars = "";
-}
-
-// Reset the password generator
-function reset() {
-  var passwordText = document.querySelector("#password");
-  passwordText.value = ""
-
+  reset()
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-// Add event listener to reset button
-resetBtn.addEventListener("click", reset)
 
 // Strings of the characters the user can choose to include their password
 var alphabetLower = "abcdefghijklmnopqrstuvwxyz"
@@ -94,6 +83,9 @@ function generatePassword() {
     option4(specialCharacters)
     console.log(chars)
 
+    if (lowercase === false && uppercase ===false && numbers === false && specialCharacters === false) {
+      alert("You must select at least one character type for a password to be generated.")
+    }
  
       for (i=1; i<=passwordLength; i++) {
         var c = Math.floor(Math.random()*chars.length + 1);
@@ -101,6 +93,6 @@ function generatePassword() {
       }
       return password;
       }
-
+  
     }
 
