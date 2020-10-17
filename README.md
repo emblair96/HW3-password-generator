@@ -1,4 +1,4 @@
-# HW-password-generator
+# HW3-password-generator
 
 ## Description of work completed
 In this assignment, I created the logic for the generatePassword() function in the script.js file.  This function generates a random password for users based on their choice of password criteria.  The live site can be found [here](https://emblair96.github.io/HW3-password-generator/).  
